@@ -13,7 +13,7 @@ export const landingPageAction = (newsFeedData) => {
 
 export const getNewsfeedData = () => (dispatch) => {
   try {
-    const response = fetchAPI.post(Api.newsfeedApi);
+    const response = fetchAPI.get(Api.newsfeedApi);
     response.then((res)=>{
         dispatch(landingPageAction(res?.data?.data));
     })
