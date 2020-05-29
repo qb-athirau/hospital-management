@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "93d9c94a12fa1099f05ea2ba99e3f09b",
+    "revision": "ac8adcbb38ac1697eaec9c66c23c2a55",
     "url": "/hospital-management/index.html"
   },
   {
@@ -24,12 +24,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hospital-management/static/js/1.72fe79c4.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "098383a9d21bd47a6a61",
-    "url": "/hospital-management/static/js/4.b29ea7e5.chunk.js"
+    "revision": "efe898615902a86ad4c6",
+    "url": "/hospital-management/static/js/4.f04ab932.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/hospital-management/static/js/4.b29ea7e5.chunk.js.LICENSE.txt"
+    "url": "/hospital-management/static/js/4.f04ab932.chunk.js.LICENSE.txt"
   },
   {
     "revision": "67cc371258a3a41534f7",
@@ -40,16 +40,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hospital-management/static/js/5.3a407558.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "050844fe99536c0a00bc",
-    "url": "/hospital-management/static/js/6.c9528324.chunk.js"
+    "revision": "13d60cf2a88a86f76a03",
+    "url": "/hospital-management/static/js/6.ae9d54fc.chunk.js"
   },
   {
-    "revision": "36e0e50f6e83dc4ec717",
-    "url": "/hospital-management/static/js/7.5ddf5394.chunk.js"
+    "revision": "3f8b5208c7b730df8212",
+    "url": "/hospital-management/static/js/7.cd4cd57e.chunk.js"
   },
   {
-    "revision": "46c36ad6faa7dd5cc45d",
-    "url": "/hospital-management/static/js/8.4521cd95.chunk.js"
+    "revision": "d5bf8455e039d38358d5",
+    "url": "/hospital-management/static/js/8.0399e399.chunk.js"
   },
   {
     "revision": "6bcaf7de5743b5c689b2",
@@ -60,8 +60,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hospital-management/static/js/main.9a2c3540.chunk.js"
   },
   {
-    "revision": "cde3f2200d49fa3d4f52",
-    "url": "/hospital-management/static/js/runtime-main.8a9bf3f4.js"
+    "revision": "5fa540256e272b73ef9b",
+    "url": "/hospital-management/static/js/runtime-main.e0e94795.js"
   },
   {
     "revision": "cdd83730878c549a9e9a754cb6dea2d3",
