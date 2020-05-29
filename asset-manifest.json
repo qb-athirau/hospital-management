@@ -1,0 +1,40 @@
+{
+  "files": {
+    "static/js/0.f95a3edd.chunk.js": "/hospital-management/static/js/0.f95a3edd.chunk.js",
+    "static/js/0.f95a3edd.chunk.js.map": "/hospital-management/static/js/0.f95a3edd.chunk.js.map",
+    "static/js/1.72fe79c4.chunk.js": "/hospital-management/static/js/1.72fe79c4.chunk.js",
+    "static/js/1.72fe79c4.chunk.js.map": "/hospital-management/static/js/1.72fe79c4.chunk.js.map",
+    "main.css": "/hospital-management/static/css/main.e43c7a89.chunk.css",
+    "main.js": "/hospital-management/static/js/main.9a2c3540.chunk.js",
+    "main.js.map": "/hospital-management/static/js/main.9a2c3540.chunk.js.map",
+    "runtime-main.js": "/hospital-management/static/js/runtime-main.8a9bf3f4.js",
+    "runtime-main.js.map": "/hospital-management/static/js/runtime-main.8a9bf3f4.js.map",
+    "static/js/4.b29ea7e5.chunk.js": "/hospital-management/static/js/4.b29ea7e5.chunk.js",
+    "static/js/4.b29ea7e5.chunk.js.map": "/hospital-management/static/js/4.b29ea7e5.chunk.js.map",
+    "static/js/5.3a407558.chunk.js": "/hospital-management/static/js/5.3a407558.chunk.js",
+    "static/js/5.3a407558.chunk.js.map": "/hospital-management/static/js/5.3a407558.chunk.js.map",
+    "static/js/6.c9528324.chunk.js": "/hospital-management/static/js/6.c9528324.chunk.js",
+    "static/js/6.c9528324.chunk.js.map": "/hospital-management/static/js/6.c9528324.chunk.js.map",
+    "static/js/7.5ddf5394.chunk.js": "/hospital-management/static/js/7.5ddf5394.chunk.js",
+    "static/js/7.5ddf5394.chunk.js.map": "/hospital-management/static/js/7.5ddf5394.chunk.js.map",
+    "static/js/8.4521cd95.chunk.js": "/hospital-management/static/js/8.4521cd95.chunk.js",
+    "static/js/8.4521cd95.chunk.js.map": "/hospital-management/static/js/8.4521cd95.chunk.js.map",
+    "static/js/9.242c1f11.chunk.js": "/hospital-management/static/js/9.242c1f11.chunk.js",
+    "static/js/9.242c1f11.chunk.js.map": "/hospital-management/static/js/9.242c1f11.chunk.js.map",
+    "index.html": "/hospital-management/index.html",
+    "precache-manifest.1ee26cd9101bcf19cf26f21acbfccce7.js": "/hospital-management/precache-manifest.1ee26cd9101bcf19cf26f21acbfccce7.js",
+    "service-worker.js": "/hospital-management/service-worker.js",
+    "static/css/main.e43c7a89.chunk.css.map": "/hospital-management/static/css/main.e43c7a89.chunk.css.map",
+    "static/js/0.f95a3edd.chunk.js.LICENSE.txt": "/hospital-management/static/js/0.f95a3edd.chunk.js.LICENSE.txt",
+    "static/js/1.72fe79c4.chunk.js.LICENSE.txt": "/hospital-management/static/js/1.72fe79c4.chunk.js.LICENSE.txt",
+    "static/js/4.b29ea7e5.chunk.js.LICENSE.txt": "/hospital-management/static/js/4.b29ea7e5.chunk.js.LICENSE.txt",
+    "static/js/5.3a407558.chunk.js.LICENSE.txt": "/hospital-management/static/js/5.3a407558.chunk.js.LICENSE.txt",
+    "static/media/page_not_found.png": "/hospital-management/static/media/page_not_found.cdd83730.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8a9bf3f4.js",
+    "static/js/4.b29ea7e5.chunk.js",
+    "static/css/main.e43c7a89.chunk.css",
+    "static/js/main.9a2c3540.chunk.js"
+  ]
+}
