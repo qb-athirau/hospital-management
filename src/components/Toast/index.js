@@ -40,7 +40,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
   return {
-    toastObj: state.commonReducer.toastObj,
+    toastObj: state.toaster.toastObj,
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Toast);

@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import { getNewsfeedData } from '../../store/actions/landingPageAction';
+import { getNewsfeedData } from './helper';
 import { LandingPage }from './component';
 
 const mapStateToProps = (state) => {
   return {
-    newsDetails: state.landingPageReducer.newsFeedData,
+    newsDetails: state.landing.newsFeedData,
   };
 };
 const mapDispatchToProps = (dispatch) => {

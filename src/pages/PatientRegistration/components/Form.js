@@ -2,12 +2,12 @@ import React from 'react';
 import { Form } from 'formik';
 import DateFnsUtils from '@date-io/date-fns';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
-import Button from '../../components/Button';
-import { ButtonWrap } from './style';
-import { PersonalDetails } from './components/personalDetails';
-import { AddressSection } from './components/addressSection';
-import { OtherSection } from './components/otherSection';
-import { Wizard, WizardStep} from './components/Wizard';
+import Button from '../../../components/Button';
+import { ButtonWrap } from '../style';
+import { PersonalDetails } from './personalDetails';
+import { AddressSection } from './addressSection';
+import { OtherSection } from './otherSection';
+import { Wizard, WizardStep} from './Wizard';
 
 export const RegistrationForm = (props) => {
   const {
@@ -32,7 +32,6 @@ export const RegistrationForm = (props) => {
       }}
       values={values}
       onSubmit={values =>{
-        console.log(props.handleSubmit(values))
         props.handleSubmit(values);
       }}
     >

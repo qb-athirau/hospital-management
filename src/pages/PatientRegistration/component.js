@@ -1,7 +1,7 @@
 import React from 'react';
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
-import { RegistrationForm } from './registrationForm';
+import { RegistrationForm } from './components/Form';
 import { RegistrationLayout, Heading, Image } from './style';
 import validator from './validate';
 import { validationText } from '../../configs/errorText';
