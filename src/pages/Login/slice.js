@@ -7,8 +7,7 @@ const login = createSlice({
   initialState,
   reducers: {
     loginAction(state, action) {
-      const { userDetails } = action.payload;
-      state.push({ userDetails });
+      state.userDetails = action.payload;
     },
   },
 });

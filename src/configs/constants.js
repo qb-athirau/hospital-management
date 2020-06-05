@@ -144,28 +144,21 @@ export const TestimonialInfoList = [
   },
 ];
 
-export const newsList = [
+export const DashboardCardDetails = [
   {
-    date: '12-02-2020',
-    article: `Wecare Hospitals, Indore performs Central India’s first complex cardiac surgery by implanting a permanent pacemaker on a two-day-old newborn baby.
-    The newborn was suffering from congenital heart block with a heart rate of less than 50 beats per min which is much lesser than normal.
-    `,
+    label: 'Doctors',
+    link: '/doctors',
   },
   {
-    date: '29-04-2020',
-    article: `Amidst the COVID-19 situation, Wecare Hospitals, Delhi successfully performed a liver transplant surgery on a 10-month-old Malaysian baby.
-    Baby Noor soon after birth had developed jaundice that worsened with time. She was further diagnosed with biliary atresia and heterotaxy.`,
+    label: 'Departments',
+    link: '/departments',
   },
   {
-    date: '02-03-2020',
-    article: `Wecare Hospitals Group has launched the Ask Wecare Skill, an Amazon Alexa Skill to enable users find the nearest Wecare hospital
-     and book an appointment with doctors.The Ask Wecare Skill will provide users access to over 5,000 doctors across 72 Wecare hospitals and to over 3,500 pharmacies throughout the country.`,
+    label: 'Appointments',
+    link: '/appointments',
   },
   {
-    date: '21-01-2020',
-    article: `Wecare Hospitals, Hyderabad has successfully performed combined procedures of
-     Living Donor Liver Transplantation and Coronary Artery Bypass Graft on a patient in a single sitting.
-     he patient was suffering from liver cirrhosis and liver cancer. Further evaluation 
-     revealed heart disease which was significant enough to preclude performing a liver transplant.`,
+    label: 'Pharmacist',
+    link: '/pharmacist',
   },
 ];

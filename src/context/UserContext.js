@@ -47,7 +47,7 @@ function useUserDispatch() {
 }
 
 function signOut(dispatch, history) {
-  localStorage.removeItem(KEY);
+  localStorage.clear();
   dispatch({ type: 'SIGN_OUT_SUCCESS' });
 }
 

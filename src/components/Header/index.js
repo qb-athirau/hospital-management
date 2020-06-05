@@ -83,7 +83,7 @@ const Header = (props) => {
       <CustomModal
         title="Item Modal"
         open={itemModalOpen}
-        handleClose={() => setItemModalOpen(false)}>
+        >
         <Login handleClose={() => setItemModalOpen(false)} />
       </CustomModal>
     </HeaderSection>

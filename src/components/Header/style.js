@@ -5,7 +5,6 @@ export const HeaderSection = styled.section`
   padding: 10px 0;
   height: 35px;
   display: flex;
-  width: 100%;
   flex-direction: row;
   ${media.mediumScreen} {
     padding: 10px 20px;

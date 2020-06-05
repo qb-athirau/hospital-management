@@ -7,8 +7,7 @@ const landing = createSlice({
   initialState,
   reducers: {
     setNewsFeed(state, action) {
-      const { newsFeedData } = action.payload;
-      state.newsFeedData = newsFeedData;
+      state.newsFeedData = action.payload;
     },
   },
 });

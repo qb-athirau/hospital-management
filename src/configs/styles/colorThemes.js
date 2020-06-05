@@ -22,7 +22,8 @@ const colorThemes = {
   pomagranate: '#ec442a',
   snow: '#fbfbfb',
   whisperTint: '#ebebeb',
-  speechBlue: '#3f51b5'
+  speechBlue: '#3f51b5',
+  primaryBlue: '#008bf8'
 };
 
 export default colorThemes;

@@ -7,16 +7,18 @@ import {loginAction} from './slice';
 export const loginUser = (loginDetails, contextDispatch, history ) => (dispatch) => {
     try {
       const response = fetchAPI.post(
-        `${Api.patientRegistrationApi}?email=${loginDetails.email}&&password=${loginDetails.password}`,
+        `${Api.loginApi}?email=${loginDetails.email}&&password=${loginDetails.password}`,
       );
       response
         .then((res) => {
           if (res.data?.length !== 0) {
               dispatch(loginAction(res.data));
+              const role= res.data.role;
             const token = getAuthToken();
             token.then((res) => { 
               if (window.localStorage) {
                 localStorage.setItem('tempAuthToken', res.data.token);
+                localStorage.setItem('role', role);
               }
               contextDispatch({ type: "LOGIN_SUCCESS" });
             });
