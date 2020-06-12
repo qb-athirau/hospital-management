@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { HeaderSection, Image, SignupBtnWraper } from './style';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { HeaderSection, Image, SignupBtnWraper } from './style';
 import { useUserState, useUserDispatch, signOut } from '../../context/UserContext';
 import { useMedia } from '../../utils/domUtils';
 import Button from '../Button';
@@ -11,6 +11,8 @@ import { useModal } from '../Modal/useModal';
 import { CustomModal } from '../Modal/customModal';
 import { Login } from '../../pages/Login';
 import { useNavigation } from '../../utils/useNavigateHook';
+import PopperMenuItem from '../Popper';
+import { headerPopperList } from '../../configs/constants';
 
 const Header = (props) => {
   const [itemModalOpen, setItemModalOpen, toggleModal] = useModal();
@@ -19,6 +21,15 @@ const Header = (props) => {
   const { isAuthenticated } = useUserState();
   const userDispatch = useUserDispatch();
   const { navigate } = useNavigation();
+  const [open, setOpen] = useState(false);
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleTooltipOpen = () => {
+    setOpen(true);
+  };
 
   useEffect(() => {
     setShowNavbar(!isMobile);
@@ -51,8 +62,22 @@ const Header = (props) => {
             alt="wecare_logo"
             onClick={() => navigate('', props.history)}
           />
+          {!isMobile && <SubHeader showNavbar={showNavbar} navigationList={props.navigationList} />}
           <HeaderSection.HeaderRight>
-            {isAuthenticated && <FontAwesomeIcon icon={faUserCircle} onClick={toggleSignin} />}
+            {isAuthenticated && (
+              <React.Fragment>
+                <div type="button">
+                  <FontAwesomeIcon icon={faUserCircle} onClick={handleTooltipOpen} />
+                </div>
+                <PopperMenuItem
+                  open={open}
+                  className="popper"
+                  placement="bottom"
+                  popperList={headerPopperList}
+                  menuItemClick={toggleSignin}
+                />
+              </React.Fragment>
+            )}
             {!isAuthenticated && !isMobile && (
               <React.Fragment>
                 <SignupBtnWraper>
@@ -77,13 +102,12 @@ const Header = (props) => {
           </HeaderSection.HeaderRight>
         </HeaderSection.HeaderWrap>
       </HeaderSection.MainHeader>
-      <HeaderSection.SubHeader>
-        <SubHeader showNavbar={showNavbar} navigationList={props.navigationList} />
-      </HeaderSection.SubHeader>
-      <CustomModal
-        title="Item Modal"
-        open={itemModalOpen}
-        >
+      {isMobile && (
+        <HeaderSection.SubHeader>
+          <SubHeader showNavbar={showNavbar} navigationList={props.navigationList} />
+        </HeaderSection.SubHeader>
+      )}
+      <CustomModal title="Item Modal" open={itemModalOpen}>
         <Login handleClose={() => setItemModalOpen(false)} />
       </CustomModal>
     </HeaderSection>

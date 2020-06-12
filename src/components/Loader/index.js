@@ -5,9 +5,7 @@ import MainLoaderWrapper from './style';
 
 const MainLoader = () => (
   <MainLoaderWrapper>
-    <MainLoaderWrapper.LoaderVideo autoPlay loop muted playsInline>
-      <FontAwesomeIcon spin icon={faSpinner} />
-    </MainLoaderWrapper.LoaderVideo>
+    <FontAwesomeIcon spin icon={faSpinner} className="icon" />
   </MainLoaderWrapper>
 );
 

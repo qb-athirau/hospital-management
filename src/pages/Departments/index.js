@@ -3,7 +3,7 @@ import Loadable from 'react-loadable';
 import { ComponentLoading } from '../../components/ComponentLoading';
 
 const DepartmentsComponent = Loadable({
-  loader: () => import('./component'),
+  loader: () => import('./container'),
   loading: ComponentLoading,
   timeout: 5000,
 });

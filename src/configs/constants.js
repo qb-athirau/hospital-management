@@ -51,6 +51,11 @@ export const toastMessages = {
   errorMsg: 'Something wrong happened',
   successLogin: 'Login successful',
   wrongEmailPassword: 'Incorrect email / password. Pleaase check.',
+  addDepartmentSuccess: 'Created successfully',
+  deleteDepartmentSuccess: 'Deleted successfully',
+  fileNotFound: 'File not found',
+  fileNotReadable: 'File is not readable',
+  errorReadingFile: 'An error occurred reading this file.',
 };
 
 export const phoneNumberMask = [
@@ -73,19 +78,19 @@ export const phoneNumberMask = [
 export const headerList = [
   {
     label: 'Home',
-    redirectTo: '/home',
+    redirectTo: '/',
   },
   {
-    label: 'About Us',
-    redirectTo: '/aboutus',
+    label: 'Dashboard',
+    redirectTo: '/dashboard',
   },
   {
-    label: 'Services',
-    redirectTo: '/services',
+    label: 'Departments',
+    redirectTo: '/departments',
   },
   {
-    label: 'Our Doctors',
-    redirectTo: '/our-doctors',
+    label: 'Doctors',
+    redirectTo: '/doctors',
   },
   {
     label: 'Contact US',
@@ -162,3 +167,7 @@ export const DashboardCardDetails = [
     link: '/pharmacist',
   },
 ];
+
+export const popperList = ['Edit', 'Delete'];
+export const headerPopperList = ['Logout'];
+export const allowedExtensions = /((\.jpeg)|(\.jpg)|(\.png))$/i;

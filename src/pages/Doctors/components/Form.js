@@ -7,12 +7,14 @@ import Button from '../../../components/Button';
 import { FieldsWrapper } from '../../PatientRegistration/style';
 import { ButtonWrap } from '../style';
 import FormikField from '../../../components/FormikField';
+import FormikSelect from '../../../components/FormikSelect';
 
 export const DoctorsForm = (props) => {
-  const { errors, touched, isSubmitting, valid, handleSubmit } = props;
+  const { errors, touched, isSubmitting, valid, handleSubmit, departments } = props;
+  const departmentList = departments.map((item) => ({ label: item.name, value: item.code }));
   return (
-    <MuiPickersUtilsProvider utils={DateFnsUtils}>
-      <Form name="Add doctor" method="post" onSubmit={handleSubmit}>
+    <Form name="Add doctor" method="post" onSubmit={props.handleSubmit}>
+      <MuiPickersUtilsProvider utils={DateFnsUtils}>
         <FieldsWrapper>
           <FormikField name="fullName" label="Name" autoComplete="off" />
           <FormikField name="age" label="Age" type="number" autoComplete="off" />
@@ -35,13 +37,24 @@ export const DoctorsForm = (props) => {
             multiline
             autoComplete="off"
           />
+          <FormikSelect
+            items={departmentList}
+            type="text"
+            name="department"
+            label="Dept."
+            fullwidth
+            autoCapitalize="off"
+            autoCorrect="off"
+            placeholder=""
+          />
         </FieldsWrapper>
+
         <ButtonWrap>
           <Button tabindex={3} primary type="submit" disabled={isSubmitting}>
             {isSubmitting ? `Creating...` : `Create`}
           </Button>
         </ButtonWrap>
-      </Form>
-    </MuiPickersUtilsProvider>
+      </MuiPickersUtilsProvider>
+    </Form>
   );
 };

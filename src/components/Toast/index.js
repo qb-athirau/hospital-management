@@ -2,14 +2,16 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Layout } from './style';
-import { updateToast } from '../../store/actions/commonActions';
+import { updateToast } from '../../slices/toasterSlice';
 
 const Toast = (props) => {
   useEffect(() => {
-    setTimeout(() => {
-      handleClose();
-    }, 3);
-  }, []);
+    if (props.toastObj.value !== false) {
+      setTimeout(() => {
+        handleClose();
+      }, 3);
+    }
+  }, [props.toastObj]);
 
   const handleClose = () => {
     props.updateToast({

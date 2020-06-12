@@ -1,8 +1,6 @@
 import { updateToast } from '../../store/actions/commonActions';
 import { toastMessages } from '../../configs/constants';
 
-export const requestOnFailed = (error) => Promise.reject(error);
-
 export const responseOnSuccess = (response) => response;
 
 export const responseOnFailed = (error) => (dispatch, history) => {

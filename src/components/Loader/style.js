@@ -6,12 +6,13 @@ const MainLoaderWrapper = styled.div`
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background: ${(props)=>props.theme.pureWhite};
-`;
-
-MainLoaderWrapper.LoaderVideo = styled.video`
-  width: auto;
-  height: 300px;
+  background: ${(props) => props.theme.pureWhite};
+  margin: auto;
+  z-index: 20;
+  .icon {
+    font-size: 40px;
+    color: ${(props) => props.theme.astronautBlue};
+  }
 `;
 
 export default MainLoaderWrapper;

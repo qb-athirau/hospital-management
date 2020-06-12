@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../configs/styles/mediaQueries';
 
 export const Layout = styled.div`
   position: absolute;
@@ -6,18 +7,22 @@ export const Layout = styled.div`
   right: 0;
   left: 0;
   bottom: 0;
-  margin: auto;
+  margin: 7rem auto;
   height: 30px;
   width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-
+  ${media.mediumScreen} {
+    left: 58rem;
+    margin: 9rem auto;
+  }
   .toast-bar {
     top: 10px;
     padding: 10px;
-    border: ${(props) => props.show ? `1px solid`:`0`};
+    border: ${(props) => (props.show ? `1px solid` : `0`)};
     border-radius: 5px;
+    color: ${(props) => props.theme.pureWhite};
   }
   .warning {
     background-color: ${(props) => props.theme.toastWarning};
@@ -29,7 +34,7 @@ export const Layout = styled.div`
     background-color: ${(props) => props.theme.toastInfo};
   }
   .success {
-    background-color: ${(props) => props.theme.toastSuccess};
+    background-color: ${(props) => props.theme.speechBlue};
   }
   .content-msg-wrapper {
     width: calc(100% - 15px);

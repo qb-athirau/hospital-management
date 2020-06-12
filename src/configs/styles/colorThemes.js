@@ -2,6 +2,7 @@ const colorThemes = {
   veryLightGrey: '#ccc',
   pureWhite: '#fff',
   lightGrey: '#999',
+  intermediateGrey: '#ede',
   errorRed: 'rgb(191, 49, 12)',
   ligntPink: 'rgb(255, 245, 245)',
   errorBrown: 'rgb(120, 27, 0)',
@@ -23,7 +24,9 @@ const colorThemes = {
   snow: '#fbfbfb',
   whisperTint: '#ebebeb',
   speechBlue: '#3f51b5',
-  primaryBlue: '#008bf8'
+  primaryBlue: '#008bf8',
+  astronautBlue: '#02475b',
+  blondBlue: '#0087ba',
 };
 
 export default colorThemes;
