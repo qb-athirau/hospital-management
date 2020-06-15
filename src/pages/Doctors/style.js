@@ -17,7 +17,7 @@ export const DoctorLayout = styled.div`
       bottom: 70px;
     }
   }
-  .popper {
+  .doctors .popper {
     position: absolute !important;
     left: 15rem !important;
     top: 1rem !important;

@@ -105,8 +105,10 @@ export const Departments = (props) => {
       <Header navigationList={headerList} history={props.history} />
       {props.loading && <MainLoader />}
       <Container>
-        <DepartmentSection>
-          <FontAwesomeIcon className="plus-icon" onClick={toggleModal} icon={faPlusCircle} />
+        <DepartmentSection className="department">
+          {props.userDetails?.role === 'admin' && (
+            <FontAwesomeIcon className="plus-icon" onClick={toggleModal} icon={faPlusCircle} />
+          )}
           <CardWrapper className="wrap">
             {props.departmentsDetails?.map((item, index) => (
               <Card key={index} className="card" nomargin={isMobile} animated>
@@ -124,19 +126,23 @@ export const Departments = (props) => {
                     </DepartmentSection.Description>
                   </DepartmentSection.Info>
                 </DepartmentSection.DetailsWrap>
-                <FontAwesomeIcon
-                  className="dots-icon"
-                  key={index}
-                  icon={faEllipsisH}
-                  onClick={() => handleTooltipOpen(index)}
-                />
-                <PopperMenuItem
-                  open={open === index}
-                  className="popper"
-                  handleClose={handleClose}
-                  popperList={popperList}
-                  menuItemClick={(label) => menuItemClick(label, item)}
-                />
+                {props.userDetails?.role === 'admin' && (
+                  <React.Fragment>
+                    <FontAwesomeIcon
+                      className="dots-icon"
+                      key={index}
+                      icon={faEllipsisH}
+                      onClick={() => handleTooltipOpen(index)}
+                    />
+                    <PopperMenuItem
+                      open={open === index}
+                      className="popper"
+                      handleClose={handleClose}
+                      popperList={popperList}
+                      menuItemClick={(label) => menuItemClick(label, item)}
+                    />
+                  </React.Fragment>
+                )}
               </Card>
             ))}
           </CardWrapper>

@@ -17,16 +17,19 @@ export const DepartmentLayout = styled.div`
       bottom: 70px;
     }
   }
-  .popper {
+
+  .department .popper {
     position: absolute !important;
     left: 15rem !important;
     top: 1rem !important;
-    right: 0;
     ${media.mediumScreen} {
-      left: 20rem !important;
+      left: 22rem !important;
     }
+    right: 0;
     .MuiMenuItem-root {
-      min-height: 30px !important;
+      font-family: Gilroy;
+      font-size: 0.6rem;
+      min-height: 26px !important;
     }
   }
 `;
@@ -112,7 +115,7 @@ DepartmentSection.Description = styled.span`
   color: ${(props) => props.theme.astronautBlue};
   opacity: 0.6;
   ${media.mediumScreen} {
-    width: 24rem;
+    // width: 24rem;
   }
 `;
 

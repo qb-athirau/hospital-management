@@ -63,6 +63,13 @@ const Header = (props) => {
             onClick={() => navigate('', props.history)}
           />
           {!isMobile && <SubHeader showNavbar={showNavbar} navigationList={props.navigationList} />}
+          <HeaderSection.Contact>
+            <div>
+              {!isMobile
+                ? `For online consultation or queries please contact: 9991234567`
+                : `contact: 9991234567`}
+            </div>
+          </HeaderSection.Contact>
           <HeaderSection.HeaderRight>
             {isAuthenticated && (
               <React.Fragment>

@@ -6,6 +6,7 @@ import { updateToast } from '../../slices/toasterSlice';
 const mapStateToProps = (state) => {
   return {
     departmentsDetails: state.departments.departmentData,
+    userDetails: state.login.userDetails,
     loading: state.departments.loading,
   };
 };

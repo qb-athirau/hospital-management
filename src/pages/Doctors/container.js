@@ -7,6 +7,7 @@ const mapStateToProps = (state) => {
   return {
     doctorsList: state.doctors.doctorsList,
     departmentsDetails: state.departments.departmentData,
+    userDetails: state.login.userDetails,
     loading: state.doctors.loading,
   };
 };

@@ -6,15 +6,17 @@ export const HeaderSection = styled.section`
   height: 35px;
   display: flex;
   flex-direction: row;
+  border-bottom: 1px solid ${(props) => props.theme.veryLightGrey};
   ${media.mediumScreen} {
     padding: 10px 20px;
     height: 90px;
     flex-direction: column;
+    border-bottom: 0;
   }
 `;
 
 HeaderSection.HeaderWrap = styled.span`
-  width: 60%;
+  width: 86%;
   display: flex;
   justify-content: space-between;
   ${media.mediumScreen} {
@@ -134,7 +136,18 @@ HeaderSection.NavItem = styled.li`
   }
 `;
 HeaderSection.Menu = styled.span``;
-
+HeaderSection.Contact = styled.span`
+  width: 80px;
+  padding: 0 7px;
+  color: #fff;
+  background-color: ${(props) => props.theme.flatBlue};
+  border-radius: 5px;
+  font-size: 12px;
+  ${media.mediumScreen} {
+    width: 230px;
+    padding: 10px;
+  }
+`;
 HeaderSection.HeaderRight = styled.div`
   display: flex;
   visibility: visible;

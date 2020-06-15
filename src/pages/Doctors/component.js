@@ -24,8 +24,9 @@ const EnhancedForm = withFormik({
     qualification: props.data.qualification ?? '',
     dateOfJoining: props.data.dateOfJoining ?? new Date(),
     description: props.data.description ?? '',
-    department: props.data.department.name ?? '',
+    department: props.data.department.code ?? '',
   }),
+  enableReinitialize: true,
   validationSchema: Yup.object().shape(validator),
   handleSubmit: (values, { props, setSubmitting }) => {
     props.addDoctor(values);
@@ -78,8 +79,10 @@ const Doctors = (props) => {
       <Header navigationList={headerList} history={props.history} />
       {props.loading && <MainLoader />}
       <Container>
-        <DoctorSection>
-          <FontAwesomeIcon className="plus-icon" onClick={toggleModal} icon={faPlusCircle} />
+        <DoctorSection className="doctors">
+          {props.userDetails?.role === 'admin' && (
+            <FontAwesomeIcon className="plus-icon" onClick={toggleModal} icon={faPlusCircle} />
+          )}
           <CardWrapper className="wrap">
             {props.doctorsList.map((item, index) => (
               <Card key={index} className="card" nomargin={isMobile} noPadding={isMobile} animated>
@@ -93,19 +96,23 @@ const Doctors = (props) => {
                     <DoctorSection.Qualification>{item.qualification}</DoctorSection.Qualification>
                   </DoctorSection.Info>
                 </DoctorSection.DetailsWrap>
-                <FontAwesomeIcon
-                  className="dots-icon"
-                  key={index}
-                  icon={faEllipsisH}
-                  onClick={() => handleTooltipOpen(index)}
-                />
-                <PopperMenuItem
-                  open={open === index}
-                  className="popper"
-                  handleClose={handleClose}
-                  popperList={popperList}
-                  menuItemClick={(label) => menuItemClick(label, item)}
-                />
+                {props.userDetails?.role === 'admin' && (
+                  <React.Fragment>
+                    <FontAwesomeIcon
+                      className="dots-icon"
+                      key={index}
+                      icon={faEllipsisH}
+                      onClick={() => handleTooltipOpen(index)}
+                    />
+                    <PopperMenuItem
+                      open={open === index}
+                      className="popper"
+                      handleClose={handleClose}
+                      popperList={popperList}
+                      menuItemClick={(label) => menuItemClick(label, item)}
+                    />
+                  </React.Fragment>
+                )}
               </Card>
             ))}
           </CardWrapper>
