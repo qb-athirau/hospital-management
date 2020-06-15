@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormControlLabel } from '@material-ui/core';
 import { Switch } from 'formik-material-ui';
-import { SectionWrap, Label, FieldsWrapper, FlexColumnWrap } from '../style';
+import { SectionWrap, FieldsWrapper, FlexColumnWrap } from '../style';
 import FormikField from '../../../components/FormikField';
 
 export const OtherSection = ({ setFieldValue, values }) => (

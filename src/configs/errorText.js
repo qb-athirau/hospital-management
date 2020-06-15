@@ -12,6 +12,10 @@ export const validationText = {
   requireZipcode: 'Please enter your zipcode',
   requireCountry: 'Please enter your country',
   invalidPhoneNumber: 'Please enter a valid phone number',
+  requireCode: 'Please enter a code',
+  requireName: 'Please enter a name',
+  requireQualification: 'Please enter your qualifications',
+  requiredateOfJoining: 'Please enter your dateOfJoining'
 };
 
 export const FailedLoading = 'Failed to load page! Try refreshing.';

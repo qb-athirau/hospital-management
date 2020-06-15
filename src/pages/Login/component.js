@@ -26,8 +26,8 @@ export const Login = (props) => {
   const userDispatch = useUserDispatch();
 
   const handleLogin = (payload) => {
-    props.handleClose();
     props.loginUser(payload, userDispatch, props.history);
+    props.handleClose();
   };
   return (
     <LoginLayout>

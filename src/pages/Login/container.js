@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { loginUser } from '../../store/actions/loginAction';
+import { loginUser } from './helper';
 import { Login } from './component';
 
 const mapDispatchToProps = (dispatch) => {
