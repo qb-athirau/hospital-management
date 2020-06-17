@@ -13,6 +13,7 @@ export const DoctorLayout = styled.div`
     position: absolute;
     right: 9px;
     bottom: 47px;
+    cursor: pointer;
     ${media.mediumScreen} {
       bottom: 70px;
     }
@@ -67,7 +68,11 @@ export const ButtonWrap = styled.div`
   }
   button {
     ${media.mobileScreen} {
-      width:100%;
+      width: 100%;
+    }
+  }
+  .appointment-btn {
+    width: 120px;
   }
 `;
 export const AddDepartment = styled.section`
@@ -113,4 +118,18 @@ DoctorSection.Qualification = styled.span`
   color: ${(props) => props.theme.lightGrey};
   font-size: 10px;
   line-height: 1.5rem;
+`;
+DoctorSection.Wrap = styled.span`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+DoctorSection.Appointment = styled.span`
+  background-color: ${(props) => props.theme.flatBlue};
+  color: ${(props) => props.theme.pureWhite};
+  cursor: pointer;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  text-align: center;
+  line-height: 2rem;
 `;

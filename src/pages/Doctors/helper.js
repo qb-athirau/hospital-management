@@ -9,15 +9,16 @@ import {
   addDoctorData,
   updateDoctorData,
   deleteDoctorData,
+  setAppointment,
 } from './slice';
 
-export const getDoctorsList = () => (dispatch) => {
+export const getDoctorsList = () => async (dispatch) => {
   try {
+    console.log('sdjsdkdkgdgd');
     dispatch(setDoctorListStart());
-    const response = fetchAPI.get(Api.doctorsApi);
-    response.then((res) => {
-      dispatch(setDoctorsList(res?.data));
-    });
+    const response = await fetchAPI.get(Api.doctorsApi);
+    dispatch(setDoctorsList(response?.data));
+    return response;
   } catch (error) {
     dispatch(setsetDoctorsListFailure());
     dispatch(
@@ -95,6 +96,59 @@ export const deleteDoctor = (data) => (dispatch) => {
         updateToast({
           value: true,
           message: toastMessages.deleteDepartmentSuccess,
+          variant: 'success',
+        }),
+      );
+    });
+  } catch (error) {
+    dispatch(setsetDoctorsListFailure());
+    dispatch(
+      updateToast({
+        value: true,
+        message: toastMessages.errorMsg,
+        variant: 'error',
+      }),
+    );
+  }
+};
+export const getAppointment = () => (dispatch) => {
+  try {
+    dispatch(setDoctorListStart());
+    console.log('ccvncnbk');
+    const response = fetchAPI.get(Api.appoinntmentsApi);
+    response.then((res) => {
+      console.log(res);
+      dispatch(setAppointment(res.data));
+      dispatch(
+        updateToast({
+          value: true,
+          message: toastMessages.addDepartmentSuccess,
+          variant: 'success',
+        }),
+      );
+    });
+  } catch (error) {
+    dispatch(setsetDoctorsListFailure());
+    dispatch(
+      updateToast({
+        value: true,
+        message: toastMessages.errorMsg,
+        variant: 'error',
+      }),
+    );
+  }
+};
+export const addAppointment = (data) => (dispatch) => {
+  console.log('add', data);
+  try {
+    dispatch(setDoctorListStart());
+    const response = fetchAPI.post(Api.appoinntmentsApi, data);
+    response.then((res) => {
+      dispatch(addAppointment(data));
+      dispatch(
+        updateToast({
+          value: true,
+          message: toastMessages.addDepartmentSuccess,
           variant: 'success',
         }),
       );

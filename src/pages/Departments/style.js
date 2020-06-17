@@ -13,11 +13,18 @@ export const DepartmentLayout = styled.div`
     position: absolute;
     right: 9px;
     bottom: 47px;
+    cursor: pointer;
     ${media.mediumScreen} {
       bottom: 70px;
     }
   }
-
+  .arrow-icon {
+    font-size: 15px;
+    position: absolute;
+    top: 2.2rem;
+    right: 12px;
+    cursor: pointer;
+  }
   .department .popper {
     position: absolute !important;
     left: 15rem !important;

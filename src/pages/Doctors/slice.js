@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = { doctorsList: [], loading: false };
+const initialState = { doctorsList: [], loading: false, appointments: [] };
 
 const doctors = createSlice({
   name: 'doctors',
@@ -32,6 +32,10 @@ const doctors = createSlice({
       state.doctorsList = state.doctorsList.filter((item) => item.code !== action.payload.code);
       state.loading = false;
     },
+    setAppointment(state, action) {
+      state.appointments = action.payload;
+      state.loading = false;
+    },
   },
 });
 
@@ -42,5 +46,6 @@ export const {
   addDoctorData,
   updateDoctorData,
   deleteDoctorData,
+  setAppointment,
 } = doctors.actions;
 export default doctors.reducer;

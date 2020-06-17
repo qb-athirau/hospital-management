@@ -137,15 +137,16 @@ HeaderSection.NavItem = styled.li`
 `;
 HeaderSection.Menu = styled.span``;
 HeaderSection.Contact = styled.span`
-  width: 80px;
-  padding: 0 7px;
-  color: #fff;
-  background-color: ${(props) => props.theme.flatBlue};
+  // width: 80px;
+  padding: 4px 7px;
+  color: ${(props) => props.theme.flatBlue};
   border-radius: 5px;
-  font-size: 12px;
+  font-size: 14px;
   ${media.mediumScreen} {
-    width: 230px;
+    // width: 230px;
     padding: 10px;
+    height: 18px;
+    border: 1px solid ${(props) => props.theme.flatBlue};
   }
 `;
 HeaderSection.HeaderRight = styled.div`

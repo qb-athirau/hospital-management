@@ -8,5 +8,6 @@ const Api = {
   // departmentsApi: `${process.env.REACT_APP_MOCK_API}my/api/departments`,
   departmentsApi: `${mockApiUrl}departments`,
   doctorsApi: `${mockApiUrl}doctors`,
+  appoinntmentsApi: `${mockApiUrl}appointments`,
 };
 export default Api;

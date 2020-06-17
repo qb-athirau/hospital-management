@@ -22,6 +22,7 @@
     "formik-material-ui-pickers": "0.0.8",
     "gh-pages": "^2.2.0",
     "history": "^4.10.1",
+    "moment": "^2.26.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-loadable": "^5.5.0",

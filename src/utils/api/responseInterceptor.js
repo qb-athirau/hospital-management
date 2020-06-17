@@ -3,13 +3,13 @@ import { toastMessages } from '../../configs/constants';
 
 export const responseOnSuccess = (response) => response;
 
-export const responseOnFailed = (error) => (dispatch, history) => {
+export const responseOnFailed = (error) => {
   const customError = { ...error };
-  if (error.response) {
-    const status = error.response.headers.status || error.response.status;
-    customError.status = status;
-    handleError(status, dispatch, history);
-  }
+  // if (error.response) {
+  //   const status = error.response.headers.status || error.response.status;
+  //   customError.status = status;
+  //   handleError(status, dispatch, history);
+  // }
   return Promise.reject(customError);
 };
 

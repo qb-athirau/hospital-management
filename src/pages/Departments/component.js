@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlusCircle, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
+import { faPlusCircle, faEllipsisH, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
 import { DepartmentLayout, DepartmentSection, AddDepartment, Heading, Image } from './style';
@@ -125,6 +125,12 @@ export const Departments = (props) => {
                       {item.description}
                     </DepartmentSection.Description>
                   </DepartmentSection.Info>
+                  <FontAwesomeIcon
+                    className="arrow-icon"
+                    key={index}
+                    icon={faChevronRight}
+                    onClick={() => props.history.push(`/doctors/?selected=${item.code}`)}
+                  />
                 </DepartmentSection.DetailsWrap>
                 {props.userDetails?.role === 'admin' && (
                   <React.Fragment>

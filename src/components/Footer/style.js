@@ -12,6 +12,10 @@ export const FooterLayout = styled.section`
     flex-direction: column;
     height: 16rem;
   }
+  a {
+    width: 100%;
+    text-decoration: none;
+  }
 `;
 
 export const BookingSpan = styled.span`
@@ -20,7 +24,7 @@ export const BookingSpan = styled.span`
   justify-content: center;
   color: ${(props) => props.theme.pureWhite};
   background-color: ${(props) => props.theme.darkBlue};
-  width: 50%;
+  // width: 50%;
   height: 8rem;
   ${media.mobileScreen} {
     width: 100%;
@@ -33,7 +37,7 @@ export const AskDoc = styled.span`
   justify-content: center;
   color: ${(props) => props.theme.pureWhite};
   background-color: ${(props) => props.theme.pomagranate};
-  width: 50%;
+  // width: 50%;
   height: 8rem;
   ${media.mobileScreen} {
     width: 100%;

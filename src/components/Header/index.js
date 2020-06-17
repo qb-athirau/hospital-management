@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faUserCircle, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 import { HeaderSection, Image, SignupBtnWraper } from './style';
 import { useUserState, useUserDispatch, signOut } from '../../context/UserContext';
 import { useMedia } from '../../utils/domUtils';
@@ -64,11 +64,8 @@ const Header = (props) => {
           />
           {!isMobile && <SubHeader showNavbar={showNavbar} navigationList={props.navigationList} />}
           <HeaderSection.Contact>
-            <div>
-              {!isMobile
-                ? `For online consultation or queries please contact: 9991234567`
-                : `contact: 9991234567`}
-            </div>
+            <FontAwesomeIcon icon={faPhoneAlt} />
+            &nbsp;:&nbsp; 9991234567
           </HeaderSection.Contact>
           <HeaderSection.HeaderRight>
             {isAuthenticated && (
