@@ -42,4 +42,12 @@ export const ModalWrap = styled(Modal)`
       padding-left: 10px;
     }
   }
+  .error {
+    padding-left: 10px;
+    color: ${(props) => props.theme.errorRed};
+    width: 216px;
+  }
+  .appointment-btn {
+    width: 120px;
+  }
 `;

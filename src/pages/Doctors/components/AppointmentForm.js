@@ -7,6 +7,7 @@ import moment from 'moment';
 import Button from '../../../components/Button';
 import { ButtonWrap } from '../style';
 import FormikField from '../../../components/FormikField';
+import { getAvailableTimeSlot } from '../helper';
 
 const validateDateOfAppointment = (value, props) => {
   let currentAppointments = [];
@@ -19,25 +20,45 @@ const validateDateOfAppointment = (value, props) => {
       });
     }
   });
-  currentAppointments.appointments.forEach((appointment) => {
+  currentAppointments.appointments.some((appointment) => {
     if (
       moment(new Date(appointment.dateOfAppointment).toISOString()).isBetween(
         moment(new Date(value).toISOString()).subtract(7, 'minutes'),
         moment(new Date(value).toISOString()).add(7, 'minutes'),
       )
     ) {
-      props.setStatus({ dateOfAppointment: 'appointment not available' });
-      return 0;
+      const timeSlot = getAvailableTimeSlot(currentAppointments.appointments, value);
+      props.setStatus({
+        dateOfAppointment: `Appointment not available. Please select from 9.00 am-  ${timeSlot} 6.00 pm`,
+      });
+      return true;
+    } else {
+      props.setStatus({ dateOfAppointment: '' });
     }
   });
 };
+
+const validateDatePatientName = (value, props) => {
+  if (value.trim() === '') {
+    props.setStatus({ name: 'Patient name cannot be blank' });
+  } else {
+    props.setStatus({ name: '' });
+  }
+};
 export const AppointmentForm = (props) => {
-  const { isSubmitting, valid, handleSubmit, validateField } = props;
+  const { isSubmitting, valid, handleSubmit, validateField, dirty } = props;
   return (
     <Form name="Appointment" method="post" onSubmit={handleSubmit}>
       <MuiPickersUtilsProvider utils={DateFnsUtils}>
-        <FormikField name="patientName" label="PatientName" autoComplete="off" />
+        <FormikField
+          name="patientName"
+          label="PatientName"
+          autoComplete="off"
+          validate={(value) => validateDatePatientName(value, props)}
+        />
+        {props.status?.name && <div className="error">{props.status?.name}</div>}
         <FormikField name="doctorName" label="DoctorName" autoComplete="off" />
+
         <FormikField
           name="dateOfAppointmnt"
           label="Date of appointment"
@@ -49,9 +70,15 @@ export const AppointmentForm = (props) => {
             validateField('dateOfAppointmnt');
           }}
         />
-        {props.status?.dateOfAppointment && <div>{props.status?.dateOfAppointment}</div>}
+        {props.status?.dateOfAppointment && (
+          <div className="error">{props.status?.dateOfAppointment}</div>
+        )}
         <ButtonWrap className="appointment-btn">
-          <Button tabindex={3} primary type="submit" disabled={isSubmitting}>
+          <Button
+            tabindex={3}
+            primary
+            type="submit"
+            disabled={isSubmitting || props.status?.dateOfAppointment || !dirty}>
             {isSubmitting ? `Booking...` : `Book Now`}
           </Button>
         </ButtonWrap>

@@ -48,6 +48,8 @@ const EnhancedAppointmentForm = withFormik({
     dateOfAppointmnt: new Date(),
   }),
   enableReinitialize: true,
+  validateOnBlur: false,
+  // validateOnChange: false,
   handleSubmit: (values, { props, setSubmitting }) => {
     props.addAppointment(values);
     const timeOut = setTimeout(() => {

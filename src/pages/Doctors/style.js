@@ -71,9 +71,6 @@ export const ButtonWrap = styled.div`
       width: 100%;
     }
   }
-  .appointment-btn {
-    width: 120px;
-  }
 `;
 export const AddDepartment = styled.section`
   display: flex;

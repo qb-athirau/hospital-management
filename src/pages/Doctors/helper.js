@@ -1,3 +1,4 @@
+import moment from 'moment';
 import fetchAPI from '../../utils/api/api';
 import Api from '../../lib/apiUrls';
 import { updateToast } from '../../slices/toasterSlice';
@@ -14,7 +15,6 @@ import {
 
 export const getDoctorsList = () => async (dispatch) => {
   try {
-    console.log('sdjsdkdkgdgd');
     dispatch(setDoctorListStart());
     const response = await fetchAPI.get(Api.doctorsApi);
     dispatch(setDoctorsList(response?.data));
@@ -114,10 +114,8 @@ export const deleteDoctor = (data) => (dispatch) => {
 export const getAppointment = () => (dispatch) => {
   try {
     dispatch(setDoctorListStart());
-    console.log('ccvncnbk');
     const response = fetchAPI.get(Api.appoinntmentsApi);
     response.then((res) => {
-      console.log(res);
       dispatch(setAppointment(res.data));
       dispatch(
         updateToast({
@@ -139,7 +137,6 @@ export const getAppointment = () => (dispatch) => {
   }
 };
 export const addAppointment = (data) => (dispatch) => {
-  console.log('add', data);
   try {
     dispatch(setDoctorListStart());
     const response = fetchAPI.post(Api.appoinntmentsApi, data);
@@ -163,4 +160,26 @@ export const addAppointment = (data) => (dispatch) => {
       }),
     );
   }
+};
+
+export const getAvailableTimeSlot = (appointments, selectedDateTime) => {
+  const sortedAppointments = [...appointments].sort((app1, app2) => {
+    const a = new Date(app1.dateOfAppointment);
+    const b = new Date(app2.dateOfAppointment);
+    if (a > b) return 1;
+    if (a < b) return -1;
+
+    return 0;
+  });
+  return sortedAppointments.map((appointment) => {
+    const appointmentDate = new Date(appointment.dateOfAppointment);
+    const selected = new Date(selectedDateTime);
+    if (appointmentDate.toDateString() === selected.toDateString()) {
+      return ` ${moment(appointmentDate).subtract(15, 'minutes').format('hh:mm a')}, ${moment(
+        appointmentDate,
+      )
+        .add(15, 'minutes')
+        .format('hh:mm a')} - `;
+    }
+  });
 };
