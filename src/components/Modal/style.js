@@ -42,9 +42,9 @@ export const ModalWrap = styled(Modal)`
       padding-left: 10px;
     }
   }
-  .error {
+  .message {
     padding-left: 10px;
-    color: ${(props) => props.theme.errorRed};
+    color: ${(props) => props.theme.toastSuccess};
     width: 216px;
   }
   .appointment-btn {

@@ -25,7 +25,9 @@ const EnhancedForm = withFormik({
     fullName: props.data.fullName ?? '',
     age: props.data.age ?? '',
     qualification: props.data.qualification ?? '',
-    dateOfJoining: props.data.dateOfJoining ?? new Date(),
+    dateOfJoining: new Date(props.data?.dateOfJoining).toDateString() ?? new Date(),
+    timeOfAppointmnt:
+      new Date(props.data?.dateOfJoining).toTimeString() ?? new Date().toTimeString(),
     description: props.data.description ?? '',
     department: props.data.department.code ?? '',
   }),
